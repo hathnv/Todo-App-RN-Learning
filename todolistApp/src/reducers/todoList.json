@@ -1,0 +1,24 @@
+{
+    "data": [
+        {
+            "content": "Đào",
+            "resolved": false
+        },
+        {
+            "content": "Lê",
+            "resolved": true
+        },
+        {
+            "content": "Mơ",
+            "resolved": false
+        },
+        {
+            "content": "Mận",
+            "resolved": true
+        },
+        {
+            "content": "Bưởi",
+            "resolved": false
+        }
+    ]
+}
