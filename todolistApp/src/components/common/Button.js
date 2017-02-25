@@ -1,48 +1,39 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 import {
-    TouchableOpacity,
-    Text,
+    TouchableOpacity, Text
 } from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons';
 
-
-const propTypes = {
-    title: PropTypes.object,
-    icon: PropTypes.object,
-    onPress: PropTypes.func,
-};
-
-const Button = ({ title, onPress, icon }) => {
-
-    const {buttonContainer, buttonTitle} = styles;
-
-    return (
-        <TouchableOpacity
-            onPress={onPress}
-            style={buttonContainer}
-        >
-            {icon !== undefined ? icon : <Text style={buttonTitle}>{title}</Text>}
-        </TouchableOpacity >
+const Button = ({ onPress, children }) => {
+    const { btnStyles, textStyles } = styles;
+    return(
+        <TouchableOpacity style={btnStyles} onPress={onPress}>
+            <Text style={textStyles}>{ children }</Text>
+        </TouchableOpacity>
     );
 };
 
-Button.propTypes = propTypes;
-
 const styles = {
-    buttonContainer: {
-        position: 'absolute',
-        bottom: 20,
-        right: 20,
-        width: 60,
-        height: 60,
-        borderRadius: 30,
+    btnStyles: {
+        borderRadius: 4,
         backgroundColor: '#D8202A',
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        height: 40,
+        width: null,
+        position: 'relative',
+        shadowColor: '#82b1ff',
+        shadowOffset: { width: 0, height: 2 }, 
+        shadowOpacity: 0.2,
+        elevation: 2,
+        alignSelf: "stretch",
+        marginLeft: 10,
+        marginRight: 10
     },
-    buttonTitle: {
+
+    textStyles: {
+        padding: 10,
         color: '#fff',
-        fontSize: 24,
+        fontSize: 16
     }
 };
 

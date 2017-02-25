@@ -5,7 +5,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import { Actions } from 'react-native-router-flux'; // Actions cung cấp phương thức di chuyển giữa các màn hình
 
 import { loadData } from '../actions';
-import { Button, ListItem } from './common';
+import { FloatButton, ListItem } from './common';
 
 // trong component dữ liệu phải đoán trc được (obj hoặc arr)
 class TodoList extends Component{
@@ -42,7 +42,7 @@ class TodoList extends Component{
                     renderRow={(item) => <ListItem item={item} />}
                     renderSeparator={this.renderSeparator}
                 />
-                <Button 
+                <FloatButton 
                     onPress={() => Actions.addTask()}
                     icon = {<Icon name="ios-add-outline" size={30} color="#fff" />}
                 />

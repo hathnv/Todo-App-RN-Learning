@@ -3,6 +3,7 @@ import {
     TouchableOpacity,
     Text
 } from 'react-native';
+import { Actions } from 'react-native-router-flux';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 const propTypes = {
@@ -12,9 +13,11 @@ const propTypes = {
 const ListItem = ({ item }) => {
 
     const { itemContainer, iconStyle, textStyle } = styles;
+    
     return (
         <TouchableOpacity
             style={itemContainer}
+            onPress={() => Actions.editTask({ item })}
         >
             <Text style={textStyle}>{item.content}</Text>
             <Icon
@@ -34,7 +37,7 @@ const styles = {
         flex: 1,
         flexDirection: 'row',
         height: 60,
-        backgroundColor: '#eee',
+        backgroundColor: '#fff',
         justifyContent: 'center',
         alignItems: 'center',
     },
